@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "de0d2e14-e4d5-4956-8b6e-bc21fbb99013",
+		"name": "User Rest Api",
+		"description": "This is a test api to retrieve user details , update and delete.\n\nBasi Auth -\n    username - admin\n    password - 1234\n\nHeader - \n    key - X-API-KEY\n    value - CODEX@123",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add User",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "CODEX@123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "adi",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "mathews",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "adi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "111222333",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "1235469875",
+							"type": "text"
+						},
+						{
+							"key": "role_type",
+							"value": "client",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/gbim/api/index.php/userapi/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gbim",
+						"api",
+						"index.php",
+						"userapi",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsers",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "CODEX@123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/gbim/api/index.php/userapi/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gbim",
+						"api",
+						"index.php",
+						"userapi",
+						"user"
+					]
+				},
+				"description": "Get all the users"
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsersById",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "CODEX@123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/gbim/api/index.php/userapi/user/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gbim",
+						"api",
+						"index.php",
+						"userapi",
+						"user",
+						"4"
+					]
+				},
+				"description": "Get all the users"
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsersByRole",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "CODEX@123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/gbim/api/index.php/userapi/user?role_type=client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gbim",
+						"api",
+						"index.php",
+						"userapi",
+						"user"
+					],
+					"query": [
+						{
+							"key": "role_type",
+							"value": "client"
+						}
+					]
+				},
+				"description": "Get all the users"
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "CODEX@123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "first_name",
+							"value": "bunny",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/gbim/api/index.php/userapi/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gbim",
+						"api",
+						"index.php",
+						"userapi",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsersByDate",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "CODEX@123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/gbim/api/index.php/userapi/userByDate/1598572800/1598918400",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gbim",
+						"api",
+						"index.php",
+						"userapi",
+						"userByDate",
+						"1598572800",
+						"1598918400"
+					]
+				},
+				"description": "Get all the users"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "CODEX@123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/gbim/api/index.php/userapi/user/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gbim",
+						"api",
+						"index.php",
+						"userapi",
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "1234",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8e7ee22c-8877-44c6-953e-ea174c0af3cb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0441e571-41cb-4112-a84a-039aac8716f8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
